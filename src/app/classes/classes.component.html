@@ -1,0 +1,25 @@
+
+
+<h2>Ajouter une classe</h2>
+
+<input type="text" name="newClasse" [(ngModel)]="newClasse">
+<button (click)="addClasse(newClasse)">Ajouter</button>
+<br>
+<hr>
+<br>
+
+<h2>Liste des classes</h2>
+
+<div *ngFor="let classe of classes; let i = index ">
+    
+    <table>
+        <tr>
+            <td>{{ classe }}</td>
+            <td> 
+                <button (click)="deleteClasse(i)" class="button-S">Supprimer</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+

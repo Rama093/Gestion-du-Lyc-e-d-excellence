@@ -1,0 +1,36 @@
+
+<h2>Ajouter un élève</h2>
+
+<input type="text" placeholder="Nom" [(ngModel)]="newEleve.nom"><br>
+<input type="text" placeholder="Prénom" [(ngModel)]="newEleve.prenom"><br>
+<select [(ngModel)]="newEleve.classe">
+  <option *ngFor="let classe of classes" [value]="classe"> {{ classe }}</option>
+</select><br>
+<button (click)="addEleve(newEleve)">Ajouter</button>
+
+<hr>
+
+<h2>Liste des élèves</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Classe</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+   
+    <tr *ngFor="let eleve of eleves; let i = index;">
+      <td>{{ eleve.nom }}</td>  
+      <td>{{ eleve.prenom }}</td>
+      <td>{{ eleve.classe }}</td>
+      <td>
+        <button (click)="deleteEleve(i)" class="button-S">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
